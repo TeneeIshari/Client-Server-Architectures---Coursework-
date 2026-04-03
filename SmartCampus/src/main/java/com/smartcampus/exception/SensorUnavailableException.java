@@ -8,6 +8,10 @@ package com.smartcampus.exception;
  *
  * @author indika
  */
-public class SensorUnavailableException {
+public class SensorUnavailableException extends RuntimeException{
+    
+    public SensorUnavailableException(String message){
+        super(message);
+    }
     
 }

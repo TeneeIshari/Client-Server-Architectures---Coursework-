@@ -4,10 +4,17 @@
  */
 package com.smartcampus.exceptionmapper;
 
-/**
- *
- * @author indika
- */
-public class GlobalExceptionMapper {
-    
+import javax.ws.rs.core.Response;
+import javax.ws.rs.ext.ExceptionMapper;
+import javax.ws.rs.ext.Provider;
+
+@Provider
+public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
+
+    @Override
+    public Response toResponse(Throwable ex) {
+        return Response.status(Response.Status.INTERNAL_SERVER_ERROR) // 500
+                .entity("{\"error\":\"Something went wrong. Please contact admin.\"}")
+                .build();
+    }
 }

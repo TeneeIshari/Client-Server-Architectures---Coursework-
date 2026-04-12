@@ -6,7 +6,7 @@ package com.smartcampus.model;
 
 /**
  *
- * @author indika
+ * @author Teneesha
  */
 public class SensorReading {
     private String id;

@@ -27,7 +27,7 @@ public class DiscoveryResource {
         // API Metadatada
         response.put("api", "Smart Campus API");
         response.put("version", "v1");
-        response.put("api", "Smart Campus API");
+        response.put("adminContact", "admin@smartcampus.uni.edu");
         
         // Resource links
         Map<String, String> resources = new HashMap<>();

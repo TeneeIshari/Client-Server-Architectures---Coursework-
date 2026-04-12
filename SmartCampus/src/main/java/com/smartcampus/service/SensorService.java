@@ -8,6 +8,7 @@ import com.smartcampus.exception.LinkedResourceNotFoundException;
 import com.smartcampus.model.Room;
 import com.smartcampus.model.Sensor;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -17,7 +18,7 @@ import java.util.stream.Collectors;
  */
 public class SensorService {
     
-    private final Map<String, Sensor> sensors = new Hashmap<>();
+    private final Map<String, Sensor> sensors = new HashMap<>();
     private final RoomService roomService = new RoomService();
     
     public Collection<Sensor> getAllSensors(){
@@ -28,7 +29,7 @@ public class SensorService {
         return sensors.values().stream().filter(sensor -> sensor.getType().equalsIgnoreCase(type)).collect(Collectors.toList());
     }
     
-    public Sensor getSeonsor(String id){
+    public Sensor getSensor(String id){
         return sensors.get(id);
     }
     
@@ -42,7 +43,7 @@ public class SensorService {
         
         sensors.put(sensor.getId(), sensor);
         
-        room.getSensorsId().add(sensor.getId());
+        room.getSensorIds().add(sensor.getId());
         
         return sensor;
     }

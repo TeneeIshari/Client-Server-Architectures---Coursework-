@@ -56,14 +56,9 @@ public class RoomResource {
     // Delete a room
     @DELETE
     @Path("{id}")
-    public Response deleteRoom(@PathParam("id") String id){
-        try{
-            roomService.deleteRoom(id);
-            return Response.noContent().build();
-        }
-        catch(RoomNotEmptyException e){
-            return Response.status(Response.Status.CONFLICT).entity("{\"error\":\"" + e.getMessage() + "\"}").build();
-        }
+    public Response deleteRoom(@PathParam("id") String id) throws RoomNotEmptyException {
+        roomService.deleteRoom(id);
+        return Response.noContent().build();
     }
     
 }

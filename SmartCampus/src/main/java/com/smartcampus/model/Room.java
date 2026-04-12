@@ -9,13 +9,16 @@ import java.util.List;
 
 /**
  *
- * @author indika
+ * @author Teneesha
  */
 public class Room {
     private String id;
     private String name;
     private int capacity;
-    private List<String> sensorId = new ArrayList<>();
+    private List<String> sensorIds = new ArrayList<>();
+    
+    public Room(){
+    }
     
     public Room(String id, String name, int capacity){
         this.id = id;
@@ -49,22 +52,22 @@ public class Room {
         this.capacity = capacity;
     }
 
-    public List<String> getSensorsId() {
-        return sensorId;
+    public List<String> getSensorIds() {
+        return sensorIds;
     }
 
-    public void setSensorsId(List<String> sensorsId) {
-        this.sensorId = sensorsId;
+    public void setSensorIds(List<String> sensorIds) {
+        this.sensorIds = sensorIds;
     }
     
     // Adding sensor
     public void addSensor(String sensorId){
-        this.sensorId.add(sensorId);
+        this.sensorIds.add(sensorId);
     }
     
     // Removing a sensor
     public void removeSensor(String sensorId){
-        this.sensorId.remove(sensorId);
+        this.sensorIds.remove(sensorId);
         
     }
 }

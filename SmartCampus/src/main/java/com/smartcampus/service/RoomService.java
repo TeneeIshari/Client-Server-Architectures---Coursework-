@@ -15,16 +15,21 @@ import java.util.Map;
  * @author Teneesha
  */
 public class RoomService {
-    private final Map<String, Room> rooms = new HashMap<>();
+    private static final Map<String, Room> rooms = new HashMap<>();
     
     // Get all Rooms
     public Collection<Room> getAllRooms(){
         return rooms.values();
     }
-    
     // Get a room by ID
     public Room getRoom(String id){
         return rooms.get(id);
+    }
+    
+    // Create a new Room
+    public Room createRoom(Room room){
+        rooms.put(room.getId(), room);
+        return room;
     }
     
     // Delete a Room
